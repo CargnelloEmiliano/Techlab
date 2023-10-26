@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "techforb-8dcb4": {
+      "hosting": {
+        "techlab": [
+          "techforb-8dcb4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "techforb-8dcb4"
+  }
+}
