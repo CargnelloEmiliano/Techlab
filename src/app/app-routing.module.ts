@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './layout/login/login.component';
 
-const routes: Routes = [{ path: 'C:/Program Files/Git/sign-in', loadChildren: () => import('./layout/login/sign-in/sign-in.module').then(m => m.SignInModule) }, { path: 'C:/Program Files/Git/sign-up', loadChildren: () => import('./layout/login/sign-up/sign-up.module').then(m => m.SignUpModule) }];
+const routes: Routes = [
+  { path: '', component: AppComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

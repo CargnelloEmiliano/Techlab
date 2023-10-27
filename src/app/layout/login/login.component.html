@@ -1,0 +1,25 @@
+<form [formGroup]="formGroup" (submit)="onSubmit()">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 d-flex justify-content-end">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" type="email">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11 d-flex justify-content-end">
+                <mat-form-field >
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput formControlName="password" type="password">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11 d-flex justify-content-end">
+                <button mat-stroked-button type="submit" > Ingresar </button>
+            </div>
+        </div>
+    </div>
+</form>
