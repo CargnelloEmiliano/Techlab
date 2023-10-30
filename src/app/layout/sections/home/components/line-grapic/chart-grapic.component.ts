@@ -11,11 +11,11 @@ export type ChartOptions = {
   xaxis: ApexXAxis;
   stroke: ApexStroke;
   dataLabels: ApexDataLabels;
-  yaxis: ApexYAxis | any;
-  title: ApexTitleSubtitle | any;
-  labels: string[] | any;
-  legend: ApexLegend | any;
-  subtitle: ApexTitleSubtitle | any;
+  yaxis: ApexYAxis;
+  title: ApexTitleSubtitle ;
+  labels: string[];
+  legend: ApexLegend;
+  subtitle: ApexTitleSubtitle;
 };
 @Component({
   selector: 'app-chart-grapic',
