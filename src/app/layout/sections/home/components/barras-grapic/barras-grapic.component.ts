@@ -1,8 +1,7 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component } from "@angular/core";
 import {
   ApexAxisChartSeries,
   ApexChart,
-  ChartComponent,
   ApexDataLabels,
   ApexPlotOptions,
   ApexYAxis,
@@ -14,16 +13,16 @@ import {
 } from "ng-apexcharts";
 
 export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
+  series?: ApexAxisChartSeries;
+  chart?: ApexChart;
+  dataLabels?: ApexDataLabels;
   plotOptions?: ApexPlotOptions;
-  yaxis: ApexYAxis;
-  xaxis: ApexXAxis;
-  fill: ApexFill;
-  tooltip: ApexTooltip;
-  stroke: ApexStroke;
-  legend: ApexLegend;
+  yaxis?: ApexYAxis;
+  xaxis?: ApexXAxis;
+  fill?: ApexFill;
+  tooltip?: ApexTooltip;
+  stroke?: ApexStroke;
+  legend?: ApexLegend;
 };
 
 @Component({
