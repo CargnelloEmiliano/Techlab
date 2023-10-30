@@ -1,25 +1,32 @@
-<form [formGroup]="formGroup" (submit)="onSubmit()">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-11 d-flex justify-content-end">
-                <mat-form-field>
-                    <mat-label>Email</mat-label>
-                    <input matInput formControlName="email" type="email">
-                </mat-form-field>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-11 d-flex justify-content-end">
-                <mat-form-field >
-                    <mat-label>Contraseña</mat-label>
-                    <input matInput formControlName="password" type="password">
-                </mat-form-field>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-11 d-flex justify-content-end">
-                <button mat-stroked-button type="submit" > Ingresar </button>
-            </div>
-        </div>
+<div class="container">
+  <mat-card class="login-card">
+    <mat-card>
+      <div class="content" (click)="loginWithGoogle()">
+        <a style="text-transform: none">
+          <img width="20px" class="left" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+          <p class="right">Login with Google</p>
+        </a>
+      </div>
+    </mat-card>
+    <form [formGroup]="formGroup" (submit)="onSubmit()">
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input matInput formControlName="password" type="password">
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-stroked-button type="submit">Login</button>
+      </mat-card-actions>
+    </form>
+    <div class="question-text">
+      ¿No tienes una cuenta? Regístrate <a [routerLink]="['/register']">aquí</a>
     </div>
-</form>
+  </mat-card>
+</div>
