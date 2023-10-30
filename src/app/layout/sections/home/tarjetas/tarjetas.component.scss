@@ -1,0 +1,84 @@
+/* Tarjetas generales */
+.credit-card,
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.credit-card{
+  background: linear-gradient(135deg, #EDEDED 0%, #C6C6C6 100%);
+  color: black;
+}
+
+/* Tarjetas de ingresos */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Tarjeta de encabezado */
+.ingresos, .egresos {
+  display: flex;
+
+  div {
+    padding-left: 10px;
+
+    p, h2 {
+      margin: 0;
+    }
+  }
+
+  button {
+    border-radius: 50px;
+    background-color: rgb(0, 0, 100);
+    height: 3.2rem;
+    width: 3.5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    mat-icon {
+      color: white;
+    }
+  }
+}
+
+.mat-mdc-card-content {
+  width: 20rem;
+  height: 12rem;
+}
+
+.saldo p, h2 {
+  margin: 0;
+}
+
+.card-number {
+  margin-top: 15px;
+  text-align: right;
+}
+
+
+.percentaje {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.titular {
+  display: flex;
+  flex-direction: row;
+  margin-top: 35px;
+  gap: 15px;
+}
+
+
+.title{
+  margin-left: 1rem;
+}

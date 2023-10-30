@@ -1,25 +1,10 @@
-
-<div class="text-center">
-  <img src="assets/logo.jfif" class="logo">
+<div class="container">
+  <img src="assets/logo.jfif" alt="Logo">
+  <mat-nav-list>
+    <mat-list-item *ngFor="let section of sections" (click)="action(section.url)">
+      <mat-icon matListItemIcon>{{ section.icon }}</mat-icon>
+      <p>{{ section.title }}</p>
+    </mat-list-item>
+  </mat-nav-list> 
 </div>
-
-<ul class="list-group mt-2">
-  <li *ngFor="let section of sections" class="list-group-item border-0">
-    <a class="d-flex align-items-center hex text-decoration-none">
-      <i [class]="section.icon"></i>
-      <p class="m-0 ml-2 fs-5 font-arial fs-5">{{ section.title }}</p>
-    </a>
-  </li>
-</ul>
-
-
-<!-- <div class="d-flex justify-content-center">
-  <img src="assets/logo.jfif">
-</div>
-<mat-nav-list>
-  <mat-list-item *ngFor="let section of sections">
-    <mat-icon matListItemIcon>{{ section.icon }}</mat-icon>
-    <p class="pt-3">{{ section.title }}</p>
-  </mat-list-item>
-</mat-nav-list> -->
 

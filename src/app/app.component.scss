@@ -1,0 +1,14 @@
+
+.container {
+    display: flex;
+  }
+  
+.cont-1 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+
+.cont-2 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+}

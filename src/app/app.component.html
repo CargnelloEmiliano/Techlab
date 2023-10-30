@@ -1,9 +1,12 @@
-<div class="row m-2">
-    <div class="col-md-2">
-        <app-nav-menu></app-nav-menu>
+<ng-container *ngIf="isLogged">
+    <div class="container">
+        <div class="cont-1">
+            <app-nav-menu></app-nav-menu>
+        </div>
+        <div class="cont-2">
+            <app-header></app-header>
+            <app-home></app-home>
+        </div>
     </div>
-    <div class="col-md-10 bg-danger">
-        <app-header></app-header>
-    </div>
-</div>
-<!-- <router-outlet></router-outlet> -->
+</ng-container>
+<router-outlet *ngIf="!isLogged"/>

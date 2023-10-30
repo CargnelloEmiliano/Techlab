@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+// * Interfaces
 import { ISections } from 'src/app/core/models/sections.interface';
+
+// * Services
+import { FirebaseService } from 'src/app/core/services/firebase.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -9,31 +15,22 @@ import { ISections } from 'src/app/core/models/sections.interface';
 })
 
 export class NavMenuComponent {
-  sections: ISections[] = [
-   {title: 'Inicio', URL: '/inicio', icon: 'bi-alarm p-2'},
-   {title: 'Prestamos', URL: '/prestamos', icon: 'bi-alarm p-2'},
-   {title: 'Operaciones', URL: '/operaciones', icon: 'bi-alarm p-2'},
-   {title: 'Ofert', URL: '/ofert', icon: 'bi-alarm p-2'},
-   {title: 'Seguros', URL: '/seguros', icon: 'bi-alarm p-2'},
-   {title: 'Puntos', URL: '/puntos', icon: 'bi-alarm p-2'},
-   {title: 'Ayuda', URL: '/ayuda', icon: 'bi-alarm p-2'},
-   {title: 'Cerrar sesión', URL: '/logout', icon: 'bi-alarm p-2'}, 
 
-  // {title: 'Inicio', URL: '/inicio', icon: 'home'},
-  // {title: 'Prestamos', URL: '/prestamos', icon: 'payment'},
-  // {title: 'Operaciones', URL: '/operaciones', icon: 'compare_arrows'},
-  // {title: 'Ofert', URL: '/ofert', icon: 'loyalty'},
-  // {title: 'Seguros', URL: '/seguros', icon: 'security'},
-  // {title: 'Puntos', URL: '/puntos', icon: 'card_giftcard'},
-  // {title: 'Ayuda', URL: '/ayuda', icon: 'help_outline'},
-  // {title: 'Cerrar sesión', URL: '/logout', icon: 'exit_to_app'}, 
-  ]
+  public sections: ISections[] = []
+  constructor(private _fireBase: FirebaseService,
+    private _userService: UserService,
+    private router: Router){}
 
-
-  constructor(private router: Router){}
-  
-  navigate(url: string) {
-    this.router.navigateByUrl(url);
+  ngOnInit(){
+    this._fireBase.get('sections').subscribe((res) => {
+      this.sections = res;
+    })
   }
 
+  action(element: string){
+    if(element == 'logout'){
+      this.router.navigateByUrl('login')
+      this._userService.logout()
+    }
+  } 
 }

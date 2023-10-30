@@ -1,0 +1,25 @@
+.mat-mdc-card-content {
+    width: 35rem;
+    height: 16rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mat-mdc-card-content div {
+    display: flex;
+    align-items: center;
+}
+
+.mat-mdc-card-content div mat-paginator{
+    height: 50px!important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.mat-grid-list{
+    display: flex;
+    flex-direction: row;
+}

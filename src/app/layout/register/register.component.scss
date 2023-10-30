@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #EDEDED 0%, #C6C6C6 100%);
+  }
+
+.mat-mdc-form-field {
+    width: 100%;
+}
+  
+.register-card {
+    width: 400px;
+    max-width: 100%;
+}
+
+.content {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.question-text {
+    font-size: 14px;
+    text-align: center;
+    a {
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,72 @@
+<h2 class="title">Inicio</h2>
+<mat-grid-list cols="3" rowHeight="230px">
+    <mat-grid-tile>
+      <mat-card class="credit-card">
+        <mat-card-content step="0.1">
+            <div class="saldo">
+                <p>Mi saldo</p>
+                <h2>${{ data.saldo ? data.saldo : 0 }}</h2>
+            </div>
+            <h2 class="card-number">{{ data.num_tarjeta ? data.num_tarjeta : '0' }}</h2>
+            <div class="titular">
+                <div>
+                    <p>Titular tarjeta</p>
+                    <p>{{ data.titular ? data.titular : '' }}</p>
+                </div>
+                <div>
+                    <p>Valido hasta</p>
+                    <p>{{ data.valido_hasta ? data.valido_hasta : '00/00' }}</p>
+                </div>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <mat-card class="card">
+          <mat-card-content>
+            <div class="header-card">
+                <div class="ingresos">
+                    <button>
+                      <mat-icon>arrow_downward</mat-icon>
+                      <mat-icon>local_atm</mat-icon>
+                    </button>
+                    <div>
+                        <p>Ingresos</p>
+                        <h2>$45,741</h2>
+                    </div>
+                </div>
+                <div class="percentaje">
+                    <mat-icon>arrow_drop_up</mat-icon>
+                    <p style="color: green;">+0.5%</p>
+                </div>
+            </div>
+            <app-chart-grapic></app-chart-grapic>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="card">
+          <mat-card-content>
+            <div class="header-card">
+                <div class="egresos">
+                    <button>
+                      <mat-icon>arrow_upward_alt</mat-icon>
+                      <mat-icon>local_atm</mat-icon>
+                    </button>
+                    <div>
+                        <p>Egresos</p>
+                        <h2>$45,741</h2>
+                    </div>
+                </div>
+                <div class="percentaje">
+                    <mat-icon>arrow_drop_down</mat-icon>
+                    <p style="color: red;">+0.5%</p>
+                </div>
+            </div>
+            <app-chart-grapic></app-chart-grapic>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>
