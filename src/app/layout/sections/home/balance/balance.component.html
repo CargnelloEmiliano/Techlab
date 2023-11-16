@@ -7,39 +7,4 @@
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
-  
-    <mat-grid-tile>
-      <mat-card class="barras-grapic">
-        <mat-card-content>
-          <div>
-            <h2>Últimas transacciones</h2>
-          </div>
-          <table mat-table [dataSource]="data" class="mat-elevation-z8">
-            <ng-container matColumnDef="icon">
-              <td mat-cell *matCellDef="let element" [style]="calcColor(element.icon)">
-                <mat-icon>{{ element.icon }}</mat-icon>
-              </td>
-            </ng-container>
-  
-            <ng-container matColumnDef="nombre">
-              <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
-            </ng-container>
-  
-            <ng-container matColumnDef="monto">
-              <td mat-cell *matCellDef="let element">${{ element.monto }}</td>
-            </ng-container>
-  
-            <ng-container matColumnDef="fecha">
-              <td mat-cell *matCellDef="let element">{{ element.fecha }}</td>
-            </ng-container>
-  
-            <ng-container matColumnDef="status">
-              <td mat-cell *matCellDef="let element" [style]="calcColor(element.status)">{{ element.status }}</td>
-            </ng-container>
-  
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
   </mat-grid-list>

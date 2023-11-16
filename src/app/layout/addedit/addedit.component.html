@@ -1,0 +1,71 @@
+<div class="dialog-title" [tabIndex]="0">
+    <h2 tabindex="0">{{ data.title | uppercase }}</h2>
+  </div>
+  
+  <div class="dialog-content">
+    <form class="form-datos" [formGroup]="formGroup">
+
+      <div class="seeker-fields-container">
+        <h3>Nombre</h3>
+        <mat-form-field class="seeker-form-field" appearance="outline">
+          <input matInput formControlName="nombre" required maxlength="100" />
+        </mat-form-field>
+      </div>
+  
+      <div class="seeker-fields-container">
+        <h3>Apellido</h3>
+        <mat-form-field class="seeker-form-field" appearance="outline">
+          <input matInput formControlName="apellido" required maxlength="100" />
+        </mat-form-field>
+      </div>
+
+      <div class="seeker-fields-container">
+        <h3>Saldo</h3>
+        <mat-form-field class="seeker-form-field" appearance="outline">
+          <input matInput formControlName="saldo" required maxlength="100" />
+        </mat-form-field>
+      </div>
+
+      <div class="seeker-fields-container">
+        <h3>Status</h3>
+        <mat-select formControlName="status" required disableOptionCentering>
+            <mat-option [value]="'B'"> Baja </mat-option>
+            <mat-option [value]="'A'"> Alta </mat-option>
+          </mat-select>
+      </div>
+      
+  
+      <div *ngIf="data.par_modo === 'C'; else other_content" class="buttons-container">
+        <button class="primary-button icon-button" type="button" mat-dialog-close>
+          <mat-icon>close</mat-icon>
+          Cancelar
+        </button>
+        <button [class]="
+            formGroup.invalid
+              ? 'primary-button icon-button disabled'
+              : 'primary-button icon-button'
+          " type="submit" (click)="confirm()">
+          <mat-icon> done </mat-icon>
+          Guardar
+        </button>
+      </div>
+  
+      <ng-template #other_content>
+        <div class="buttons-container">
+          <button class="primary-button icon-button" type="button" mat-dialog-close>
+            <mat-icon>close</mat-icon>
+            Cancelar
+          </button>
+          <button [class]="
+              formGroup.invalid
+                ? 'primary-button icon-button disabled'
+                : 'primary-button icon-button'
+            " type="submit" (click)="confirm()">
+            <mat-icon> done </mat-icon>
+            Guardar
+          </button>
+        </div>
+      </ng-template>
+    </form>
+  </div>
+  

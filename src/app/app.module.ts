@@ -29,6 +29,11 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 
 // * Environment
 import { environment } from '../environments/environment';
+import { SucursalesComponent } from './layout/sections/sucursales/sucursales.component';
+import { VentasComponent } from './layout/sections/ventas/ventas.component';
+import { ClientesComponent } from './layout/sections/clientes/clientes.component';
+import { AddeditComponent } from './layout/addedit/addedit.component';
+import { ConfirmDialogComponent } from './layout/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -43,7 +48,11 @@ import { environment } from '../environments/environment';
     BarrasGrapicComponent,
     HomeComponent,
     BalanceComponent,
-
+    SucursalesComponent,
+    VentasComponent,
+    ClientesComponent,
+    AddeditComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -12,11 +12,11 @@ import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgApexchartsModule } from 'ng-apexcharts';
-
+import {MatSelectModule} from '@angular/material/select';
 import { ErrorComponent } from './snackbar/error/error.component';
 import { InformationComponent } from './snackbar/information/information.component';
 import { SuccessComponent } from './snackbar/success/success.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,10 @@ import { SuccessComponent } from './snackbar/success/success.component';
     MatGridListModule,
     MatTableModule,
     NgApexchartsModule,
-    MatPaginatorModule  
+    MatPaginatorModule,
+    MatSelectModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [
   ],
