@@ -13,8 +13,14 @@ import { ITransaction } from 'src/app/core/models/transaction.interface';
 export class BalanceComponent {
   displayedColumns: string[] = ['icon', 'nombre', 'monto', 'fecha', 'status'];
   @Input() public data: ITransaction[] = [];
+  @Input() public number: any[] = [];
 
-  constructor(){}
+  constructor(){
+    
+  }
+
+  ngOnInit(){
+  }
 
   calcColor(element: string): string{
     switch(element){

@@ -5,11 +5,11 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 import { getErrorMessage } from 'src/app/core/validators/character.validator';
 
 @Component({
-  selector: 'app-addedit',
-  templateUrl: './addedit.component.html',
-  styleUrls: ['./addedit.component.scss']
+  selector: 'app-addedit-suc',
+  templateUrl: './addedit-suc.component.html',
+  styleUrls: ['./addedit-suc.component.scss']
 })
-export class AddeditComponent {
+export class AddeditSucursalesComponent {
   public formGroup: UntypedFormGroup = new UntypedFormGroup({});
   public activeTabIndex = 0;
   public errorFecha = false;
@@ -20,30 +20,29 @@ export class AddeditComponent {
     private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    console.log(data);
-    
+
     this.formGroup = new UntypedFormGroup({
-      nombre: new UntypedFormControl(
-        this.data.nombre ? this.data.nombre.trim() : '',
+      num_suc: new UntypedFormControl(
+        this.data.num_suc ? this.data.num_suc.trim() : '',
         Validators.compose([Validators.required])
       ),
-      apellido: new UntypedFormControl(
-        this.data.apellido ? this.data.apellido : '',
+      nombre: new UntypedFormControl(
+        this.data.nombre ? this.data.nombre : '',
         Validators.compose([
           Validators.required,
           Validators.minLength(3),
           Validators.maxLength(100),
         ])
       ),
-      saldo: new UntypedFormControl(
-        this.data.saldo ? this.data.saldo : 0,
+      direccion: new UntypedFormControl(
+        this.data.direccion ? this.data.direccion : 0,
         Validators.compose([
           Validators.required,
-          Validators.maxLength(100)
+          Validators.maxLength(100),
         ])
       ),
-      status: new UntypedFormControl(
-        this.data.status ? this.data.status : '',
+      empleados: new UntypedFormControl(
+        this.data.empleados ? this.data.empleados : '',
         Validators.compose([
           Validators.required,
           Validators.maxLength(8),
@@ -63,9 +62,9 @@ export class AddeditComponent {
     if (this.formGroup.valid) {
       this.dialogRef.close({
         nombre: this.formGroup.get('nombre')?.value,
-        apellido: this.formGroup.get('apellido')?.value,
-        saldo: this.formGroup.get('saldo')?.value,
-        status: this.formGroup.get('status')?.value,
+        num_suc: this.formGroup.get('num_suc')?.value,
+        direccion: this.formGroup.get('direccion')?.value,
+        empleados: this.formGroup.get('empleados')?.value,
       });
     }
   }

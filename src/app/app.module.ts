@@ -34,6 +34,8 @@ import { VentasComponent } from './layout/sections/ventas/ventas.component';
 import { ClientesComponent } from './layout/sections/clientes/clientes.component';
 import { AddeditComponent } from './layout/addedit/addedit.component';
 import { ConfirmDialogComponent } from './layout/confirm-dialog/confirm-dialog.component';
+import { AddeditSucursalesComponent } from './layout/addedit-suc/addedit-suc.component';
+
 
 
 @NgModule({
@@ -52,6 +54,7 @@ import { ConfirmDialogComponent } from './layout/confirm-dialog/confirm-dialog.c
     VentasComponent,
     ClientesComponent,
     AddeditComponent,
+    AddeditSucursalesComponent,
     ConfirmDialogComponent
   ],
   imports: [

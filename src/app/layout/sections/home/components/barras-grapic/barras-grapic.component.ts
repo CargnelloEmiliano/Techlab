@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -32,18 +32,20 @@ export type ChartOptions = {
 })
 export class BarrasGrapicComponent {
 
-  public chartOptions: Partial<ChartOptions>;
 
-  constructor() {
+  @Input() public data: any[] = [];
+  public chartOptions!: Partial<ChartOptions>;
+
+  ngOnInit(){
     this.chartOptions = {
       series: [
         {
-          name: "Esta semana",
-          data: [443, 554, 577, 564, 1000, 1100, 800, 2500, 2000]
+          name: "Primeras 2 semanas",
+          data: this.data
         },
         {
-          name: "Semana pasada",
-          data: [563, 551, 501, 541, 2144, 1000, 500, 2000, 2000]
+          name: "Ultimas 2 semanas",
+          data: this.data
         },
       ],
       chart: {
@@ -94,6 +96,10 @@ export class BarrasGrapicComponent {
         }
       }
     };
+  }
+
+  constructor() {
+    
   }
 
 }

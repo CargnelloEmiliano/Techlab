@@ -6,6 +6,19 @@
     <form class="form-datos" [formGroup]="formGroup">
 
       <div class="seeker-fields-container">
+        <h3>Nro sucursales</h3>
+        <mat-form-field class="seeker-form-field" appearance="outline">
+          <input matInput formControlName="num_suc" required maxlength="100" />
+          <mat-error *ngIf="
+          formGroup.get('num_suc')?.invalid &&
+          formGroup.get('num_suc')?.touched
+        ">
+        {{ errMessage(formGroup.get("num_suc")) }}
+      </mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="seeker-fields-container">
         <h3>Nombre</h3>
         <mat-form-field class="seeker-form-field" appearance="outline">
           <input matInput formControlName="nombre" required maxlength="100" />
@@ -17,39 +30,31 @@
       </mat-error>
         </mat-form-field>
       </div>
-  
+
       <div class="seeker-fields-container">
-        <h3>Apellido</h3>
+        <h3>Direccion</h3>
         <mat-form-field class="seeker-form-field" appearance="outline">
-          <input matInput formControlName="apellido" required maxlength="100" />
+          <input matInput formControlName="direccion" required maxlength="100" />
           <mat-error *ngIf="
-          formGroup.get('apellido')?.invalid &&
-          formGroup.get('apellido')?.touched
+          formGroup.get('direccion')?.invalid &&
+          formGroup.get('direccion')?.touched
         ">
-        {{ errMessage(formGroup.get("apellido")) }}
+        {{ errMessage(formGroup.get("direccion")) }}
       </mat-error>
         </mat-form-field>
       </div>
 
       <div class="seeker-fields-container">
-        <h3>Saldo</h3>
+        <h3>Empleados</h3>
         <mat-form-field class="seeker-form-field" appearance="outline">
-          <input matInput formControlName="saldo" required maxlength="100" />
+          <input matInput formControlName="empleados" required maxlength="100" />
           <mat-error *ngIf="
-          formGroup.get('saldo')?.invalid &&
-          formGroup.get('saldo')?.touched
+          formGroup.get('empleados')?.invalid &&
+          formGroup.get('empleados')?.touched
         ">
-        {{ errMessage(formGroup.get("saldo")) }}
+        {{ errMessage(formGroup.get("empleados")) }}
       </mat-error>
         </mat-form-field>
-      </div>
-
-      <div class="seeker-fields-container">
-        <h3>Status</h3>
-        <mat-select formControlName="status" required disableOptionCentering>
-            <mat-option [value]="'B'"> Baja </mat-option>
-            <mat-option [value]="'A'"> Alta </mat-option>
-          </mat-select>
       </div>
       
   

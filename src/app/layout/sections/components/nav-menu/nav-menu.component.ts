@@ -28,9 +28,6 @@ export class NavMenuComponent {
   }
 
   action(element: string){
-    if(element == 'logout'){
-      this.router.navigateByUrl('login')
-      this._userService.logout()
-    }
+   this.router.navigateByUrl(element)
   } 
 }
